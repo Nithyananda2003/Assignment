@@ -1,32 +1,34 @@
-class Calculator {
-    constructor(a, b, operation) {
-        this.a = parseFloat(a);
-        this.b = parseFloat(b);
-        this.operation = operation.trim();
+class pg1 {
+    constructor(x, y, output) {
+        this.x = parseFloat(x);
+        this.y = parseFloat(y);
+        this.output = output.trim();
     }
-    calculate() {
-        switch (this.operation) {
+    doIt() {
+        switch (this.output) {
             case "+":
-                return this.a + this.b;
+                return this.x + this.y;
             case "-":
-                return this.a - this.b;
+                return this.x - this.y;
             case "*":
-                return this.a * this.b;
+                return this.x * this.y;
             case "/":
-                if (this.b === 0) {
-                    throw new Error("Can't divide by zero!");
+                if (this.y === 0) {
+                    throw new Error("error");
                 }
-                return this.a / this.b;
+                return this.x / this.y;
             default:
-                throw new Error("Use: +, -, *, /");
+                throw new Error("error");
         }
     }
 }
+
 try {
-    const a = prompt("Enter first number");
-    const b = prompt("Enter second number");
-    const operation = prompt("Enter operation");
-    const calc = new Calculator(a, b, operation);
-    console.log(`Result: ${calc.calculate()}`);
+    const x = prompt("enter the number");
+    const y = prompt("enter the number");
+    const output = prompt("answer");
+    const c = new pg1(x, y, output);
+    console.log(`answer:${c.doIt()}`);
 } catch (e) {
-    console.log(`Error: ${e.message}`);
+    console.log(`error ${e.message}`);
+}
