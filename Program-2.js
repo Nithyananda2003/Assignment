@@ -1,18 +1,19 @@
-function series(a) {
-    let result = [];
-    for (let i = 0; i < a; i++) {
-        result.push(2 * i + 1);
+function pg2(x) {
+    let r = [];
+    for (let i = 0; i < x; i++) {
+        r.push(2 * i + 1);
     }
-    return result;
+    return r;
 }
+
 try {
-    const a = parseInt(prompt("enter number"));
-    if (isNaN(a) || a < 1) {
-        console.log("numbe should be greater than 0");
+    const x = parseInt(prompt("enter the numebr"));
+    if (isNaN(x) || x < 1) {
+        console.log("error");
     } else {
-        const result = series(a);
-        console.log(`result: ${result.join(", ")}`);
+        const r = pg2(x);
+        console.log(`res: ${r.join(", ")}`);
     }
 } catch (e) {
-    console.log("not possible");
+    console.log("error");
 }
